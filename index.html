@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameCheat Pro - Unlock Unlimited Power in Offline Games</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ff6b6b;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23ff6b6b;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23000000;stop-opacity:0"/></radialGradient></defs><rect width="1000" height="1000" fill="url(%23a)"/></svg>') no-repeat center/cover;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-out;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .feature-card h3 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+        .feature-card p {
+            color: #ddd;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .plan-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 107, 107, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: transform 0.6s ease;
+            opacity: 0;
+        }
+        .plan-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translateX(100%) translateY(100%);
+        }
+        .plan-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.2);
+        }
+        .plan-card.special {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        .plan-card h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .price {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .duration {
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+        .plan-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        .plan-card ul li {
+            color: #ddd;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        .plan-card ul li::before {
+            content: '✓';
+            color: #ff6b6b;
+            position: absolute;
+            left: 0;
+        }
+        .buy-button {
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+        .buy-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            padding: 2rem 0;
+            color: #ddd;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">GameCheat Pro</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dominate Offline Games with GameCheat Pro</h1>
+            <p>Unlock god mode, infinite lives, and unlimited resources in Super Sonic, Mario, and more. No more frustration – just pure victory!</p>
+            <a href="#pricing" class="cta-button">Get Started Now</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose GameCheat Pro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Easy to Use</h3>
+                    <p>One-click installation. Works seamlessly with your favorite offline games like Super Sonic without any hassle.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Undetectable</h3>
+                    <p>Safe for single-player modes. No online bans – cheat freely in your private world.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Regular Updates</h3>
+                    <p>Compatible with the latest game versions. We keep your cheats fresh and effective.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <div class="pricing-grid">
+                <div class="plan-card special">
+                    <h3>Special Offer</h3>
+                    <div class="price">$1.99</div>
+                    <div class="duration">1 Week Trial</div>
+                    <ul>
+                        <li>Full access to all cheats</li>
+                        <li>Super Sonic & more games</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+                <div class="plan-card">
+                    <h3>Monthly</h3>
+                    <div class="price">$3.99</div>
+                    <div class="duration">1 Month</div>
+                    <ul>
+                        <li>Unlimited cheats</li>
+                        <li>All offline games supported</li>
+                        <li>Auto-updates</li>
+                    </ul>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+                <div class="plan-card">
+                    <h3>Yearly</h3>
+                    <div class="price">$5.99</div>
+                    <div class="duration">1 Year</div>
+                    <ul>
+                        <li>Everything in Monthly</li>
+                        <li>20% savings</li>
+                        <li>Exclusive bonuses</li>
+                    </ul>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+                <div class="plan-card">
+                    <h3>Lifetime</h3>
+                    <div class="price">$7.99</div>
+                    <div class="duration">Lifetime Access</div>
+                    <ul>
+                        <li>Forever cheats</li>
+                        <li>All future updates</li>
+                        <li>VIP support</li>
+                    </ul>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2025 GameCheat Pro. All rights reserved. | Contact: support@gamecheatpro.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .plan-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Buy button alert (placeholder for real payment integration)
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Redirecting to secure payment... (Demo)');
+            });
+        });
+    </script>
+</body>
+</html>
